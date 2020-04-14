@@ -1,0 +1,26 @@
+link for Parallax : https://simpleparallax.com/
+
+download then unzip & save the folder (simpleParallax.js-master) on this project folder
+
+invoke it on index.html
+
+    <!-- invoke parallax -->
+    <script src="simpleParallax.js-master/dist/simpleParallax.js"></script>
+    <!-- invoke script -->
+    <script src="script.js"></script>
+
+then initialization it by 
+    Giving the following HTML:
+
+    <img class="thumbnail" src="image.jpg" alt="image">
+
+simply add the following JavaScript code:
+
+    var image = document.getElementsByClassName('thumbnail');
+    new simpleParallax(image);
+
+You can also choose to apply the parallax on multiple images:
+
+    var images = document.querySelectorAll('img');
+    new simpleParallax(images);
+

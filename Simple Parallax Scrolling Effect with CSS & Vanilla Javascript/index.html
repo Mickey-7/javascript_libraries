@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- invoke css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Moon Light Parallax Effect</title>
+</head>
+<body>
+    <section>
+        <img src="img/bg.jpg" alt="" id="bg">
+        <img src="img/moon.png" alt="" id="moon">
+        <img src="img/mountain.png" alt="" id="mountain">
+        <img src="img/road.png" alt="" id="road">
+        <h2 id="text">Moon Light</h2>
+    </section>
+
+    <h3>Parallax</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium aliquid esse numquam illum sunt, veniam atque odit blanditiis doloremque odio quas voluptatem, architecto ex magni nostrum dolores quibusdam quis quidem eius magnam dolorem mollitia. Illum, possimus voluptatem veritatis mollitia id nulla eaque incidunt commodi. Illo corporis, iure, nam amet minima facilis ex repellendus ad eos architecto nostrum nesciunt, inventore quidem suscipit. Laudantium error aliquid omnis labore totam illo iure veniam tenetur quia numquam rem soluta consectetur quasi in, doloremque voluptatum dolor corporis unde? Asperiores vero impedit doloribus qui perspiciatis velit expedita magni delectus adipisci nobis voluptatum iste, minima, odit earum.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium aliquid esse numquam illum sunt, veniam atque odit blanditiis doloremque odio quas voluptatem, architecto ex magni nostrum dolores quibusdam quis quidem eius magnam dolorem mollitia. Illum, possimus voluptatem veritatis mollitia id nulla eaque incidunt commodi. Illo corporis, iure, nam amet minima facilis ex repellendus ad eos architecto nostrum nesciunt, inventore quidem suscipit. Laudantium error aliquid omnis labore totam illo iure veniam tenetur quia numquam rem soluta consectetur quasi in, doloremque voluptatum dolor corporis unde? Asperiores vero impedit doloribus qui perspiciatis velit expedita magni delectus adipisci nobis voluptatum iste, minima, odit earum.
+    </p>
+
+    <script type="text/javascript">
+        let bg = document.getElementById("bg")
+        let moon = document.getElementById('moon')
+        let mountain = document.getElementById('mountain')
+        let road = document.getElementById('road')
+        let text = document.getElementById('text')
+
+        window.addEventListener("scroll", function(){
+            var value = window.scrollY;
+
+            bg.style.top = value * 0.5 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            mountain.style.top = -value * 0.15 + 'px';
+            road.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+        })
+
+    </script>
+
+</body>
+</html>
