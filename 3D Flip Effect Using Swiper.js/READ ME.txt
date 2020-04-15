@@ -1,0 +1,189 @@
+dowload latest Swiper.js : https://github.com/nolimits4web/swiper
+
+invoke both css and js file on html file
+
+link for demos : https://swiperjs.com/demos/
+
+Include Swiper Files To Website/App
+    In your html file:
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        ...
+        <link rel="stylesheet" href="path/to/swiper.min.css">
+    </head>
+    <body>
+        ...
+        <script src="path/to/swiper.min.js"></script>
+    </body>
+    </html>
+
+Add Swiper HTML Layout
+    Now, we need to add basic Swiper layout to our app:
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+Swiper CSS Styles/Size
+    After that, we may need to set Swiper size in your CSS file:
+
+    .swiper-container {
+        width: 600px;
+        height: 300px;
+    }
+
+Initialize Swiper
+    Finally, we need to initialize Swiper in JS. 
+    There are few options/places to do that:
+
+The best option will be in inline script or in script 
+file that is included in the very end of body 
+(right before closing </body> tag):
+
+    <body>
+    ...
+    <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+        el: '.swiper-scrollbar',
+        },
+    })
+    </script>
+    </body>
+
+
+As a CommonJs module
+    Swiper is fully compatible with CommonJs modules and 
+    can be used in Node.js-like environment:
+
+    var Swiper = require('swiper');
+    var mySwiper = new Swiper('.swiper-container', { /* ... */ });
+
+
+--------------------------------------------------------------------------------------
+
+by just adding swiper-container, swiper-wrapper & swiper-slide,
+
+the images will be on top of each other  
+    -by default, it should be next to each other (in a block)
+
+--------------------------------------------------------------------------------------
+
+link for API : https://swiperjs.com/api/        - how to use Swipe.js
+
+Initialize Swiper
+    Now, when we have Swiper's HTML, we need to initialize it using the following function:
+
+    
+new Swiper(swiperContainer, parameters)- initialize swiper with options
+
+    swiperContainer 
+        - HTMLElement or string (with CSS Selector) of swiper container HTML element. Required.
+    
+    parameters 
+        - object - object with Swiper parameters. Optional.
+
+
+Method returns initialized Swiper instance
+    For example:
+
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        spaceBetween: 100
+    });
+
+After you initialize Swiper it is possible to access to Swiper's instance on its HTMLElement. 
+It is swiper property of Swiper's HTML container element:
+
+    var mySwiper = document.querySelector('.swiper-container').swiper
+
+    // Now you can use all slider methods like
+    mySwiper.slideNext();
+
+--------------------------------------------------------------------------------------
+
+https://swiperjs.com/api/#flip-effect
+
+on the sideNavBar : select flip effect
+
+Flip Effect                                                     Improve this Doc
+
+Flip Effect Parameters
+    Be sure to have the `effect` param set to `flip` in order for this to work.
+
+    flipEffect - object
+
+Object with Flip-effect parameters. For example:
+
+    var mySwiper = new Swiper('.swiper-container', {
+    flipEffect: {
+        rotate: 30,
+        slideShadows: false,
+    },
+    });
+
+options :
+    {
+    slideShadows    boolean true
+    Enables slides shadows
+
+    limitRotation   boolean true
+    Limit edge slides rotation
+    }
+
+--------------------------------------------------------------------------------------
+
+implementation
+
+    var swiper = new Swiper('.swiper-container', {          //new Swiper(swiperContainer, parameters)
+        effect:"flip",                                      //`effect` param set to `flip` 
+        grabCursor:true,
+        pagination:{
+            el: ".swiper-pagination",                       //invoking pagination
+        },
+        navigation:{
+            nextEl: ".swiper-button-next",                  //invoking button next
+            prevEl: ".swiper-button-prev",                  //invoking button prev
+        },
+    });
+
+pagination is not used here : though its visible on lower left side of screen
+
+for slow flip : 
+    try left click on image then slowly drag the mouse in any directions

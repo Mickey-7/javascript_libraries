@@ -1,0 +1,5 @@
+Swiper - Thumb API : https://swiperjs.com/api/#thumbs
+
+Swiper - Demo : https://swiperjs.com/demos/#thumbs_gallery_with_loop_mode
+
+all images are downloaded from : https://stackblitz.com/edit/swiper-demo-31-thumbs-gallery-with-loop-mode?file=index.html
